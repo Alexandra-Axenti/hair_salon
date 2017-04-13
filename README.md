@@ -4,7 +4,7 @@ A web app to manage a hair salon's stylists and clients.
 
 # User Stories
 
-* As a salon owner, I want to view, add, update and delete stylists and clients.
+* As a salon owner, I want to view, add, update and delete stylists.
 * As a salon owner, I want to view, add, update and delete clients.
 * As a salon owner, I want to add clients to a stylist.
 
@@ -13,7 +13,11 @@ A web app to manage a hair salon's stylists and clients.
 * Install postgres
 * Open your terminal and run the following commands:
 
+psql
+
 CREATE DATABASE hair_salon;
+
+\c hair_salon
 
 CREATE TABLE stylists (id  serial PRIMARY KEY, name VARCHAR);
 
