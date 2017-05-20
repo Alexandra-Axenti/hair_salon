@@ -1,4 +1,5 @@
 require('spec_helper')
+require 'pry'
 
 describe(Client) do
   describe('.all') do
@@ -43,6 +44,20 @@ describe(Client) do
       client.save()
       client.update({:name => "Emilio Ross"})
       expect(client.name()).to(eq("Emilio Ross"))
+    end
+  end
+
+  describe("#assign_stylist") do
+    it("lets you assign a client to a different stylist") do
+      stylist = Stylist.new({:name => "First Hairdresser", :id => nil})
+      stylist.save()
+      stylist2 = Stylist.new({:name => "Second Hairdresser", :id => nil})
+      stylist2.save()
+      client = Client.new({:name => "Emma Wong", :stylist_id => stylist.id(), :id => nil})
+      client.save()
+      client.assign_stylist(stylist2)
+      binding.pry
+      expect(client.stylist_id).to(eq(stylist2.id()))
     end
   end
 
