@@ -1,4 +1,5 @@
-
+require 'Client'
+require 'pry'
 class Stylist
 
   attr_reader(:name, :id)
@@ -41,11 +42,12 @@ class Stylist
 
   define_method(:add_client) do |client|
     DB.exec("INSERT INTO clients (stylist_id) VALUES (#{@id});")
+    client
   end
 
   define_method(:clients) do
     stylist_clients = []
-    clients = DB.exec("SELECT id name FROM clients WHERE stylist_id = #{self.id};")
+    clients = DB.exec("SELECT * FROM clients WHERE stylist_id = #{self.id()};")
     clients.each() do |client|
       name = client.fetch("name")
       id = client.fetch("id").to_i

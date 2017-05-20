@@ -7,6 +7,6 @@ require("pg")
 
 DB = PG.connect({:dbname => "hair_salon_test"})
 
-get('/')
+get('/') do
   erb(:index)
 end

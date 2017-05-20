@@ -1,5 +1,4 @@
 require('spec_helper')
-
 describe(Stylist) do
   describe('.all') do
     it("starts off with no stylists") do
@@ -50,22 +49,22 @@ describe(Stylist) do
     it("lets you add a client to a stylist") do
       stylist = Stylist.new({:name => "Hairdresser", :id => nil})
       stylist.save()
-      client = Client.new({:name => "Emma Wong", :stylist_id => nil, :id => nil})
+      client = Client.new({:name => "Emma Wong", :stylist_id => stylist.id(), :id => nil})
       client.save()
-      expect(stylist.add_client(client)).to(eq([client]))
+      expect(stylist.add_client(client)).to(eq(client))
     end
   end
 
   describe("#clients") do
     it("returns all of the clients scheduled to a particular stylist") do
-      stylist = Stylist.new(:name => "John Hair", :id => nil)
-      stylist.save()
-      client = Client.new(:name => "Lucy Liu", :stylist_id => stylist.id(), :id => nil)
-      client.save()
-      client2 = Client.new(:name => "Bing Bing", :stylist_id => stylist.id(), :id => nil)
+      test_stylist = Stylist.new(:name => "John Hair", :id => nil)
+      test_stylist.save()
+      client1 = Client.new(:name => "Lucy Liu", :stylist_id => test_stylist.id(), :id => nil)
+      client1.save()
+      client2 = Client.new(:name => "Bing Bing", :stylist_id => test_stylist.id(), :id => nil)
       client2.save()
-      expect(stylist.clients()).to(eq([client, client2]))
-    end
+      expect(test_stylist.clients()).to(eq([client1, client2]))
+      end
   end
 
   describe("#delete") do

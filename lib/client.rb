@@ -1,5 +1,3 @@
-require('spec_helper')
-
 class Client
   attr_reader(:name, :id, :stylist_id)
 
@@ -29,7 +27,11 @@ class Client
     end
 
     define_method(:save) do
-      result = DB.exec("INSERT INTO clients (name) VALUES ('#{@name}') RETURNING id;")
+      if (@stylist_id == nil)
+        result = DB.exec("INSERT INTO clients (name) VALUES ('#{@name}') RETURNING id;")
+      else
+        result = DB.exec("INSERT INTO clients (name, stylist_id) VALUES ('#{@name}',#{@stylist_id}) RETURNING id;")
+      end
       @id = result.first().fetch("id").to_i()
     end
 
