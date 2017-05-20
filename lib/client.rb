@@ -1,5 +1,4 @@
 require 'Stylist'
-require 'pry'
 
 class Client
   attr_reader(:name, :id, :stylist_id)

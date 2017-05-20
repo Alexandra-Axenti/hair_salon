@@ -1,5 +1,4 @@
 require('spec_helper')
-require 'pry'
 
 describe(Client) do
   describe('.all') do
@@ -56,7 +55,6 @@ describe(Client) do
       client = Client.new({:name => "Emma Wong", :stylist_id => stylist.id(), :id => nil})
       client.save()
       client.assign_stylist(stylist2)
-      binding.pry
       expect(client.stylist_id).to(eq(stylist2.id()))
     end
   end
