@@ -3,11 +3,41 @@
     <head>
       <title>Hair Salon</title>
       <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+      <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Roboto|Slabo|Metamorphous|Kaushan+Script|Parisienne" rel="stylesheet">
       <link rel='stylesheet' href='styles.css'>
     </head>
     <body>
-      <div class="container">
-        <%= yield %>
+      <div class="wrapper row">
+        <div class="col-md-2">
+          <div class="vertical-menu">
+            <p id="profile-text"><br><img id="profile" src="/img/profile.jpg">
+            <br><br>Camelia Fiore
+            <br>Salon Administrator</p>
+            <a href="/" class="active">Home</a>
+            <a href="/stylists">Stylists</a>
+            <a href="/clients">Clients</a>
+            <a href="/appointments">Appointments</a>
+            <a href="/sales">Sales</a>
+          </div>
+        </div>
+        <div class="container_wrapper">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <div>
+                  <a class="navbar-brand" href="/">
+                    <img id="brand" src="/img/logo.png">
+                  </a>
+                  <p id="nav-text" class="navbar-text"><span class="sweet">Sweet</span>  Beauty  Salon</p>
+                </div>
+              </div>
+              <button type="button" class="btn btn-default navbar-btn">Log out</button>
+            </div>
+          </nav>
+          <div class="container">
+              <%= yield %>
+          </div>
+        </div>
       </div>
     </body>
   </html>

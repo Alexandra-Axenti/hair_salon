@@ -1,0 +1,7 @@
+<% if @clients.any?() %>
+<% @clients.each() do |client| %>
+<li><%= client.name() %></li>
+<% end %>
+<% else %>
+There are no clients yet
+<% end %>

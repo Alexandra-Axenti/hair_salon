@@ -1,0 +1,10 @@
+<% if @stylists.any?() %>
+<% @stylists.each() do |stylist| %>
+<li><%= stylist.name() %></li>
+<% end %>
+<% else %>
+There are no stylists yet
+<% end %>
+
+
+<a href="/form">Add a Stylist</a>
