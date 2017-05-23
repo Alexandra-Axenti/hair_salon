@@ -5,15 +5,17 @@
 
      function drawChart() {
        var data = google.visualization.arrayToDataTable([
-         ['Year', 'Sales', 'Expenses'],
-         ['2004',  1000,      400],
-         ['2005',  1170,      460],
-         ['2006',  660,       1120],
-         ['2007',  1030,      540]
+         ['Date', 'Sales', 'Expenses'],
+         ['2016-01',  1000,      400],
+         ['2016-04',   780,      540],
+         ['2016-07',  1100,      800],
+         ['2016-10',   230,      400],
+         ['2017-01',  1000,      400],
+         ['2017-04',   800,      540],
+         ['2017-07',   950,      460]
        ]);
 
        var options = {
-         title: 'Company Performance',
          curveType: 'function',
          legend: { position: 'bottom' }
        };
@@ -23,4 +25,10 @@
        chart.draw(data, options);
      }
    </script>
-   <div id="curve_chart" style="width: 900px; height: 500px"></div>
+
+   <div class="container-index">
+     <div class="index_wrapper">
+       <h4>Sales and Expenses for the period 2016 - 2017</h4>
+       <div id="curve_chart" style="width: 900px; height: 500px"></div>
+     </div>
+   </div>
