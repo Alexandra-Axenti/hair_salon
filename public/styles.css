@@ -1,4 +1,176 @@
-body {
-  color: #f44242;
-  font-size: 5em;
+* {
+  font-family: Roboto;
+}
+
+.vertical-menu {
+    width: 200px; /* Set a width if you like */
+    margin-left: none;
+    position: absolute;
+    height: 100%;
+    background-color: #f99;
+    float: left;
+}
+
+.vertical-menu a {
+    background-color: #f99; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+
+}
+
+.vertical-menu a:hover {
+    background-color: #ffbfbf; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    background-color: #ff5151;
+    color: white;
+}
+
+.vertical-menu a:target {
+    background-color: #ff5151;
+    color: white;
+}
+
+.vertical-menu a.focus {
+    background-color: #ff5151;
+    color: white;
+}
+
+.row {
+  height: 100%;
+}
+
+html, body, .container, .col-md-2 {height: 100%; min-height: 100%}
+
+#profile {
+  width: 120px;
+  border-radius: 50%;
+}
+
+#profile-text {
+  text-align: center;
+}
+
+.container_wrapper {
+  margin-left: 200px;
+  margin-top: 100px;
+  background-color: #f5f5f5;
+}
+
+.navbar-fixed-top {
+  margin-left: 200px;
+  background-color: #444;
+}
+
+#brand {
+  height: 75px;
+  margin-right: -30px;
+}
+
+.navbar-btn {
+  margin-right: 0;
+  margin-top: 40px;
+  float: right;
+}
+
+#nav-text {
+  background-color: #444;
+  color: #fff;
+  font-family: Alex Brush;
+  font-size: 2.8em;
+  margin-top: 30px;
+  margin-right: 0;
+}
+
+.sweet {
+  color: #f99;
+  font-family: Alex Brush;
+}
+
+.container-index {
+  background-color: #fff;
+  margin:10%;
+  min-width: 10%;
+  max-width: 80%;
+  min-height: 600px;
+  max-height: 800px;
+}
+
+.index-wrapper {
+  weight: 40%;
+  height: 40%;
+  margin: 50px;
+  padding: 50px;
+}
+
+.about-title {
+  color: #ff5151;
+  font-style: italic;
+  font-family: Alex Brush;
+  font-size: 1.4em;
+}
+
+h3, h4 {
+  text-align: center;
+  padding-top: 10%;
+  color: #444;
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.8em;
+}
+
+#slogan {
+  font-style: italic;
+  color: #ff5151;
+}
+
+.about {
+  margin: 5% 10% 10% 10%;
+  font-size: 1.8em;
+  font-family: Roboto;
+  color: #444;
+  text-align: justify;
+}
+
+.price-tag, .services-text {
+  text-align: center;
+  font-size: 1.4em;
+  color: #444;
+}
+
+.col-md-6 {
+  margin-left: 15%;
+}
+
+.services-text {
+  text-align: left;
+}
+
+.text2 {
+  text-align: right;
+}
+
+.col-md-1 {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.row {
+  overflow-y: hidden;
+}
+
+.item-list {
+  list-style-type: none;
+  float: right;
+}
+
+.chart-div {
+  margin-left: 10%;
+  margin-right: 10%;
 }

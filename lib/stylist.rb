@@ -1,4 +1,3 @@
-require 'Client'
 class Stylist
 
   attr_reader(:name, :id)
